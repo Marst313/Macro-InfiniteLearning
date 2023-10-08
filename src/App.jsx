@@ -4,7 +4,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import './css/style.css';
 
 // Import pages
-import { LaporanSaya, Dashboard, SharedLayout } from './pages';
+import { LaporanSaya, Dashboard, SharedLayout, LaporanTerkini, Profile } from './pages';
 
 function App() {
   const location = useLocation();
@@ -21,6 +21,8 @@ function App() {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="report/laporansaya" element={<LaporanSaya />} />
+          <Route path="report/laporanterkini" element={<LaporanTerkini />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
     </>

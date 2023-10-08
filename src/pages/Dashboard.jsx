@@ -1,8 +1,5 @@
 import React from 'react';
 
-import Sidebar from '../partials/Sidebar';
-import Header from '../partials/Header';
-
 import { Calender, Stats, WelcomeBanner } from '../partials/dashboard/';
 
 function Dashboard() {
