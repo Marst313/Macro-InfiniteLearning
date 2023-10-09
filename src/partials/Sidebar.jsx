@@ -50,9 +50,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
       {/* Sidebar */}
 
-      <NavLink end to="/" className={`gap-2 py-9 px-5  hidden lg:flex`}>
+      <NavLink end to="/" className={`gap-2 py-9 px-5 items-center hidden lg:flex`}>
         <img src="" alt="Logo" />
-        <h1>CareTakers</h1>
+        <h1 className="text-blackSecondary font-semibold text-2xl">Caretakers</h1>
       </NavLink>
       <div
         id="sidebar"
