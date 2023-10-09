@@ -2,7 +2,7 @@ import React from 'react';
 
 function WelcomeBanner() {
   return (
-    <div className="relative bg-bg-primary p-4 sm:p-6 rounded-xl overflow-hidden mb-8">
+    <div className="relative bg-bg-primary p-4 sm:p-6 rounded-xl overflow-hidden mb-8 mt-3">
       {/* Background illustration */}
       <div className="absolute right-0 top-0 -mt-4 mr-16 pointer-events-none hidden xl:block" aria-hidden="true">
         <svg width="319" height="198" xmlnsXlink="http://www.w3.org/1999/xlink">
