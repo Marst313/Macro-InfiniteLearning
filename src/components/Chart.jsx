@@ -39,6 +39,7 @@ const Chart = () => {
         labeldisplay: 'rotate',
         showRealTimeValue: '0',
         bgColor: '#0057FF',
+        anchorRadius: '5',
       },
       categories: [
         {
