@@ -48,6 +48,21 @@ const Landing = () => {
       </div>
       </div>
       </div>
+
+      {/* Layanan Kami */}
+      <div className='w-screen'>
+        <div className='text-center text-blue-600 text-4xl font-bold mt-10'>Layanan Kami</div>
+        <div className='text-center text-md'>Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
+        <div className='flex flex-row justify-around'>
+          <div className='bg-bg-primary w-1/4 h-96 justify-center text-white px-6 py-6'>
+          <img src="../img/people.png" alt="layanan 1" className='h-1/3 w-5/6'/>
+          <div className='content-end'>
+          <div className='text-center font-md content-end'>Laporkan Masalah Infrastruktur</div>
+          <div className='text-justify text-sm font-sm content-end '>Kami menyediakan platform yang mudah digunakan di mana Anda dapat melaporkan berbagai masalah infrastruktur, mulai dari lubang dan trotoar yang rusak hingga lampu lalu lintas yang tidak berfungsi.</div>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
