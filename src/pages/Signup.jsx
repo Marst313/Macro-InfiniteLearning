@@ -1,6 +1,6 @@
 import React from 'react';
 
-const signup = () => {
+const Signup = () => {
   return (
     <section className="bg-bg-primary w-screen h-screen">
       <div className="bg-white flex-col justify-center flex w-2/12 h-80 mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"> 
@@ -44,4 +44,4 @@ const signup = () => {
   );
 };
 
-export default signup;
+export default Signup;
