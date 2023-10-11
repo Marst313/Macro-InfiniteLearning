@@ -112,7 +112,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && 'hidden'}`}>
                           <li className="mb-1 last:mb-0">
-                            <NavLink end to="/" className={({ isActive }) => 'flex items-center transition duration-150 truncate ' + (isActive ? 'text-whiteSecondary' : 'text-slate-400 hover:text-whiteSecondary')}>
+                            <NavLink end to="/" className={({ isActive }) => 'flex items-center transition duration-150 truncate ' + (isActive ? 'text-whiteSecondary' : 'text-whiteSecondary')}>
                               <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
                                 <circle cx="24" cy="24" r="21.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M35.692 30.754A13.5 13.5 0 1 1 24 10.5M12.31 30.745l-6.93 4.001" />
@@ -159,7 +159,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && 'hidden'}`}>
                           <li className="mb-1 last:mb-0">
-                            <NavLink end to="/report/laporansaya" className={({ isActive }) => 'flex items-center transition duration-150 truncate ' + (isActive ? 'text-whiteSecondary' : 'text-slate-400 hover:text-whiteSecondary')}>
+                            <NavLink end to="/report/laporansaya" className={({ isActive }) => 'flex items-center transition duration-150 truncate ' + (isActive ? 'text-whiteSecondary' : 'text-whiteSecondary')}>
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-plus" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z" />
                                 <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
@@ -169,7 +169,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             </NavLink>
                           </li>
                           <li className="mb-1 last:mb-0">
-                            <NavLink end to="/report/laporanterkini" className={({ isActive }) => 'flex items-center transition duration-150 truncate ' + (isActive ? 'text-whiteSecondary' : 'text-slate-400 hover:text-whiteSecondary')}>
+                            <NavLink end to="/report/laporanterkini" className={({ isActive }) => 'flex items-center transition duration-150 truncate ' + (isActive ? 'text-whiteSecondary' : 'text-whiteSecondary')}>
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
                                 <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z" />
                                 <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
@@ -191,10 +191,10 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
-                      <p className={`block text-whiteSecondary truncate transition duration-150  mt-5 ${pathname.includes('profiles') ? 'hover:text-whiteSecondary' : 'hover:text-white'}`}>
+                      <p className={`block text-whiteSecondary truncate transition duration-150  mt-5 ${pathname.includes('profiles') ? 'hover:text-whiteSecondary' : 'hover:text-white '}`}>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
-                            <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 uppercase tracking-widest">Profiles</span>
+                            <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 uppercase tracking-widest ">Profiles</span>
                           </div>
                         </div>
                       </p>
@@ -202,7 +202,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && 'hidden'}`}>
                           <li className="mb-1 last:mb-0">
-                            <NavLink end to="/profile" className={({ isActive }) => 'flex items-center transition duration-150 truncate ' + (isActive ? 'text-whiteSecondary' : 'text-slate-400 hover:text-whiteSecondary')}>
+                            <NavLink end to="/profile" className={({ isActive }) => 'flex items-center transition duration-150 truncate ' + (isActive ? 'text-whiteSecondary' : 'text-whiteSecondary')}>
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
                               </svg>
