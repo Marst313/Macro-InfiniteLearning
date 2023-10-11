@@ -4,6 +4,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import './css/style.css';
 
 // Import pages
+
 import { CreateReport, LaporanSaya, Dashboard, SharedLayout, LaporanTerkini, Profile, Signin, Signup, Landing } from './pages';
 
 function App() {
