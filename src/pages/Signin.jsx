@@ -10,11 +10,11 @@ const Signin = () => {
         <h3 className="text-center my-3 text-bg-primary ">
           Tidak punya akun?
           <Link to="/signup" className="font-semibold leading-6 cursor-pointer hover:text-blue-800 ">
-            Daftar disini
+            {` `}Daftar disini
           </Link>
         </h3>
 
-        <form className="flex flex-col justify-center gap-10">
+        <form className="flex flex-col justify-center gap-8">
           <input
             id="email"
             name="email"

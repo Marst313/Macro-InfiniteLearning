@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HeaderLs = () => {
   return (
@@ -13,7 +14,9 @@ const HeaderLs = () => {
           </svg>
           <input type="text" placeholder="Search Report" className="px-5 py-2 rounded-lg w-96 border-bg-primary pl-7 placeholder:opacity-50 placeholder:text-bg-primary" />
         </form>
-        <button className="bg-bg-primary text-whiteSecondary px-5 py-2 rounded-lg">Buat Laporan</button>
+        <Link to="/report/laporansaya/laporanbaru" className="bg-bg-primary text-whiteSecondary px-5 py-2 rounded-lg">
+          Buat Laporan
+        </Link>
       </div>
     </div>
   );
