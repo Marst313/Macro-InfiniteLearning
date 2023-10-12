@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Transition from '../utils/Transition';
+import { useUserContext } from '../utils/userContext';
 
 function DropdownProfile({ align }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const { user, email } = useUserContext();
 
   const trigger = useRef(null);
   const dropdown = useRef(null);
@@ -37,7 +40,7 @@ function DropdownProfile({ align }) {
           <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
         </svg>
         <div className="flex items-center truncate">
-          <span className="truncate ml-2 text-sm font-light dark:text-slate-300 group-hover:text-slate-800 ">Ganjer</span>
+          <span className="truncate ml-2 text-sm font-light dark:text-slate-300 group-hover:text-slate-800 ">{user === 'Admin' ? 'Admin' : email || 'Ganjer'}</span>
         </div>
       </button>
 
@@ -52,9 +55,9 @@ function DropdownProfile({ align }) {
         leaveEnd="opacity-0"
       >
         <div ref={dropdown} onFocus={() => setDropdownOpen(true)} onBlur={() => setDropdownOpen(false)}>
-          <div className="pt-0.5 pb-2 px-3 mb-1 border-b border-slate-200 dark:border-slate-700">
-            <div className="font-medium text-slate-800 ">Ganjer</div>
-            <div className="text-xs text-slate-500 dark:text-slate-400 italic">User</div>
+          <div className="pt-0.5 pb-2 px-3 mb-1 border-b border-slate-200 ">
+            <div className="font-medium text-slate-800 ">{user === 'Admin' ? 'Admin' : email || 'Ganjer'}</div>
+            <div className="text-xs text-slate-500 dark:text-slate-400 italic">{user}</div>
           </div>
 
           <Link className="font-medium text-sm text-bg-primary hover:bg-bg-primary hover:text-whiteSecondary dark:hover:text-indigo-400 flex items-center py-1 px-3" to="/signin" onClick={() => setDropdownOpen(!dropdownOpen)}>

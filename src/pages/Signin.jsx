@@ -1,10 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useUserContext } from '../utils/userContext';
 
 const Signin = () => {
+  const { email, setEmail, setUser } = useUserContext();
+  const passRef = useRef(null);
+
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    if (email === 'admin@gmail.com' && passRef.current.value === 'admin123') {
+      setUser('Admin');
+    } else {
+      setUser('User');
+    }
+
+    navigate('/');
+  };
+
   return (
     <section className="bg-bg-primary w-screen h-screen">
-      <div className="bg-white flex-col justify-center flex py-5 px-10 w-3/12 mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  gap-3 rounded-lg">
+      <div className="bg-white flex-col justify-center flex py-5 px-5 lg:px-10 w-80 lg:w-96 mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  gap-3 rounded-lg h-[25rem]">
         <h1 className="text-4xl font-bold text-bg-primary text-center">Masuk</h1>
 
         <h3 className="text-center my-3 text-bg-primary ">
@@ -14,8 +32,10 @@ const Signin = () => {
           </Link>
         </h3>
 
-        <form className="flex flex-col justify-center gap-8">
+        <form className="flex flex-col justify-center gap-8" onSubmit={handleLogin}>
           <input
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
             id="email"
             name="email"
             placeholder="Email"
@@ -31,6 +51,7 @@ const Signin = () => {
             placeholder="Kata Sandi"
             type="password"
             autocomplate="password"
+            ref={passRef}
             required
             className="block w-full rounded-md  py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-bg-primary    sm:text-sm sm:leading-6 border-[1px] border-bg-primary"
           />
