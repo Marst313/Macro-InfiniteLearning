@@ -6,6 +6,7 @@ import Layanan2 from '../img/layanan2.png'
 import Layanan3 from '../img/layanan3.png'
 import logo from '../img/logo.svg' 
 import logobw from '../img/logobw.svg' 
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
   return (
@@ -19,11 +20,11 @@ const Landing = () => {
             </div>
         </div>
         <div className='justify-items-end flex flex-row'>
-          <div className='px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer'>About</div>
-          <div className='px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer'>User Guide</div>
-          <div className='px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer'>News & Update</div>
-          <div className='px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer'>Contact</div>
-        <div className='bg-bg-primary px-4 py-2 rounded-lg text-white font-bold cursor-pointer hover:bg-yellow-400'>Sign In</div>
+          <a href="#about" className='px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer'>About</a>
+          <a href="#guide" className='px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer'>User Guide</a>
+          <a href="#laporanTerkini" className='px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer'>News & Update</a>
+          <a href="#kontak" className='px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer'>Contact</a>
+          <Link to="/Signin" className='bg-bg-primary px-4 py-2 rounded-lg text-white font-bold cursor-pointer hover:bg-yellow-400'>Sign In</Link>
         </div>
       </div>
 
@@ -34,8 +35,8 @@ const Landing = () => {
           <div className='font-bold text-7xl'>Laporkan <br /> Masalahmu</div>
           <div className='text-md'>Sampaikan laporanmu langsung kepada <br /> instansi pemerintah yang berwenang</div>
           <div className='flex flex-row gap-5 items-center'>
-          <div className='px-8 py-3 border-white border-2 rounded-xl mt-3 hover:bg-yellow-400'>About</div>
-          <div className='px-8 py-3 mt-3 bg-yellow-400 rounded-xl'>Get Started →</div>
+          <a href='#about' className='px-8 py-3 border-white border-2 rounded-xl mt-3 hover:bg-white hover:text-blue-600 hover:border-0'>About</a>
+          <Link to="/Signup" className='px-8 py-3 mt-3 bg-white border-2 border-white text-blue-600 rounded-xl hover:bg-yellow-400 hover:text-white hover:border-0'>Get Started →</Link>
           </div>
         </div>
         {/* right side */}
@@ -45,7 +46,7 @@ const Landing = () => {
       </div>
 
       {/* tentang perusahaan */}
-      <div className='w-screen'>
+      <div id='about' className='w-screen'>
       <div className='text-center text-blue-600 text-4xl font-bold mt-10'>Tentang Perusahaan</div>
       <div className='text-center text-md'>Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
         <div className='flex flex-row'>
@@ -60,7 +61,7 @@ const Landing = () => {
       </div>
 
       {/* Layanan Kami */}
-      <div className='w-screen p-10'>
+      <div id='layananKami' className='w-screen p-10'>
         <div className='text-center text-blue-600 text-4xl font-bold'>Layanan Kami</div>
         <div className='text-center text-md'>Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
         <div className='flex flex-row justify-center gap-3'>
@@ -92,7 +93,7 @@ const Landing = () => {
         </div>
 
         {/* Cara Kerja Page */}
-      <div className='w-screen'>
+      <div id='caraKerja' className='w-screen'>
       <div className='text-center text-blue-600 text-4xl font-bold mt-10'>Bagaimana Situs Web Ini Dapat Membantu Anda?</div>
       <div className='text-center text-md'>Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
         <div className='flex flex-row justify-center gap-12 mt-5'>
@@ -121,8 +122,8 @@ const Landing = () => {
         </div>
       </div>
 
-      {/* Tutorial */}
-      <div className='p-16'>
+      {/* User guide */}
+      <div id='guide' className='p-16'>
       <div className='bg-blue-600 w-100  mt-10 px-1 py-1 flex flex-row rounded-lg'>
         {/* Text */}
         <div className='flex-col w-1/2 justify-start content-center text-white mx-16 my-28'>
@@ -141,7 +142,7 @@ const Landing = () => {
       </div>
 
       {/* Laporan Terkini */}
-      <div className='w-screen px-10'>
+      <div id='laporanTerkini' className='w-screen px-10'>
         <div className='text-center text-blue-600 text-4xl font-bold'>Laporan Terkini</div>
         <div className='text-center text-md'>Temukan berita atau laporan terkini lainnya!</div>
         <div className='flex flex-row justify-center gap-3'>
@@ -182,7 +183,7 @@ const Landing = () => {
         </div>
 
       {/* Kontak Kami */}
-      <div className='p-12 w-screen justify-center'>
+      <div id='kontak' className='p-12 w-screen justify-center'>
         <div className='bg-whiteSecondary h-3/4 p-5 rounded-lg flex flex-row gap-10'>
             {/* Left content */}
           <div className='bg-blue-600 w-1/2 rounded-lg flex-col py-20 px-20'>
@@ -212,34 +213,34 @@ const Landing = () => {
           </div>
 
             {/* Right content */}
-            <div className='bg-white rounded-lg w-1/2 flex-col py-16 px-16 justify-end ml-auto'>
+            <form className='bg-white rounded-lg w-1/2 flex-col py-16 px-16 justify-end ml-auto'>
             <div className='text-blue-600 font-bold text-2xl'>Tulis Keluhan Anda</div>
 
             <div className='flex flex-row gap-5 justify-between'>
 
               <div className='mt-5'>
-                <div for="Nama">Nama Lengkap</div>
+                <label for="Nama">Nama Lengkap</label>
                 <input className='rounded-md mt-1 border-blue-600' type="text" name="" id="Nama" />
               </div>
 
               <div className='mt-5'>
-                <div for="Email">Email</div>
+                <label for="Email">Email</label>
                 <input className='rounded-md mt-1 border-blue-600' type="text" name="" id="Email" />
               </div>
 
             </div>
 
               <div className='mt-5'>
-                <div for="nohp">No Hp</div>
+                <label for="nohp">No Hp</label>
                 <input className='rounded-md mt-1 border-blue-600 w-full' type="text" name="" id="nohp" />
               </div>
 
               <div className='mt-5'>
-                <div for="pesan">Pesan</div>
+                <label for="pesan">Pesan</label>
                 <textarea className='rounded-md mt-1 border-blue-600 w-full' type="text" name="" id="pesan" />
               </div>
 
-          </div>
+          </form>
 
         </div>
 
@@ -256,10 +257,10 @@ const Landing = () => {
             <div className='text-sm mt-5'>Copyright ©2023 Caretakers. All Right Reserved</div>
         </div>
         <div className='justify-items-end mt-12 items-end flex flex-row gap-8'>
-          <div className='text-sm hover:text-yellow-400 cursor-pointer'>About</div>
-          <div className='text-sm hover:text-yellow-400 cursor-pointer'>User Guide</div>
-          <div className='text-sm hover:text-yellow-400 cursor-pointer'>News & Update</div>
-          <div className='text-sm hover:text-yellow-400 cursor-pointer'>Contact</div>
+          <a href="#about" className='text-sm py-2 text-white hover:text-yellow-400 cursor-pointer'>About</a>
+          <a href="#guide" className='text-sm py-2 text-white hover:text-yellow-400 cursor-pointer'>User Guide</a>
+          <a href="#laporanTerkini" className='text-sm py-2 text-white hover:text-yellow-400 cursor-pointer'>News & Update</a>
+          <a href="#kontak" className='text-sm py-2 text-white hover:text-yellow-400 cursor-pointer'>Contact</a>
         </div>
       </div>
     </div>
