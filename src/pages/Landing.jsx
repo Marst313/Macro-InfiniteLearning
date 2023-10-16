@@ -19,11 +19,20 @@ const Landing = () => {
             <div className="font-semibold text-3xl mt-1">Caretakers</div>
           </div>
         </div>
+
         <div className="justify-items-end flex flex-row">
-          <div className="px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer">About</div>
-          <div className="px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer">User Guide</div>
-          <div className="px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer">News & Update</div>
-          <div className="px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer">Contact</div>
+          <a href="#about" className="px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer">
+            About
+          </a>
+          <a href="#guide" className="px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer">
+            User Guide
+          </a>
+          <a href="#laporanTerkini" className="px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer">
+            News & Update
+          </a>
+          <a href="#kontak" className="px-5 py-2 text-blue-600 hover:text-yellow-400 cursor-pointer">
+            Contact
+          </a>
           <Link to="/signin" className="bg-bg-primary px-4 py-2 rounded-lg text-white font-bold cursor-pointer hover:bg-yellow-400">
             Sign In
           </Link>
@@ -41,8 +50,12 @@ const Landing = () => {
             Sampaikan laporanmu langsung kepada <br /> instansi pemerintah yang berwenang
           </div>
           <div className="flex flex-row gap-5 items-center">
-            <button className="px-8 py-3 border-white border-2 rounded-xl mt-3 hover:bg-yellow-400">About</button>
-            <button className="px-8 py-3 mt-3 bg-yellow-400 hover:bg-opacity-90 rounded-xl">Get Started →</button>
+            <a href="#about" className="px-8 py-3 border-white border-2 rounded-xl mt-3 hover:bg-white hover:text-blue-600 hover:border-0">
+              About
+            </a>
+            <Link to="/signup" className="px-8 py-3 mt-3 bg-white border-2 border-white text-blue-600 rounded-xl hover:bg-yellow-400 hover:text-white hover:border-0">
+              Get Started →
+            </Link>
           </div>
         </div>
         {/* right side */}
@@ -52,7 +65,7 @@ const Landing = () => {
       </div>
 
       {/* tentang perusahaan */}
-      <div className="w-screen">
+      <div id="about" className="w-screen">
         <div className="text-center text-blue-600 text-4xl font-bold mt-10">Tentang Perusahaan</div>
         <div className="text-center text-md">Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
         <div className="flex flex-row">
@@ -70,7 +83,7 @@ const Landing = () => {
       </div>
 
       {/* Layanan Kami */}
-      <div className="w-screen p-10">
+      <div id="layananKami" className="w-screen p-10">
         <div className="text-center text-blue-600 text-4xl font-bold">Layanan Kami</div>
         <div className="text-center text-md">Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
         <div className="flex flex-row justify-center gap-3">
@@ -84,27 +97,11 @@ const Landing = () => {
               </div>
             </div>
           </div>
-          {/* Card */}
-          <div className="justify-around mt-5">
-            <div className="w-120 justify-center place-content-end px-4">
-              <img src={Layanan2} alt="layanan 2" className="w-80 mx-auto" />
-              <div className="text-center text-blue-600 font-semibold mt-5">Pemantauan Waktu Nyata</div>
-              <div className="text-center text-sm font-sm mt-5">Kami menggunakan teknologi tercanggih untuk memantau permasalahan yang dilaporkan secara real-time. Memastikan bahwa masalah ditangani secepat mungkin.</div>
-            </div>
-          </div>
-          {/* Card */}
-          <div className="justify-around mt-5">
-            <div className="w-120 justify-center place-content-end px-4">
-              <img src={Layanan3} alt="layanan 3" className="w-80 mx-auto" />
-              <div className="text-center text-blue-600 font-semibold mt-5">Transparansi dan Akuntabilitas</div>
-              <div className="text-center text-sm font-sm mt-5">Kami berkomitmen terhadap transparansi dalam operasi kami. Anda dapat melacak perkembangan masalah yang dilaporkan dan melihat status perbaikan yang sedang berlangsung.</div>
-            </div>
-          </div>
         </div>
       </div>
 
       {/* Cara Kerja Page */}
-      <div className="w-screen">
+      <div id="caraKerja" className="w-screen">
         <div className="text-center text-blue-600 text-4xl font-bold mt-10">Bagaimana Situs Web Ini Dapat Membantu Anda?</div>
         <div className="text-center text-md">Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
         <div className="flex flex-row justify-center gap-12 mt-5">
@@ -135,8 +132,8 @@ const Landing = () => {
         </div>
       </div>
 
-      {/* Tutorial */}
-      <div className="p-16">
+      {/* User guide */}
+      <div id="guide" className="p-16">
         <div className="bg-blue-600 w-100  mt-10 px-1 py-1 flex flex-row rounded-lg">
           {/* Text */}
           <div className="flex-col w-1/2 justify-start content-center text-white mx-16 my-28">
@@ -151,17 +148,11 @@ const Landing = () => {
             </div>
             <div className="font-bold text-sm hover:text-yellow-400">Get Started →</div>
           </div>
-          {/* Video */}
-          <div class="bg-whiteSecondary w-1/2 flex items-center justify-center rounded-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#0057FF" class="bi bi-play-fill" viewBox="0 0 16 16">
-              <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-            </svg>
-          </div>
         </div>
       </div>
 
       {/* Laporan Terkini */}
-      <div className="w-screen px-10">
+      <div id="laporanTerkini" className="w-screen px-10">
         <div className="text-center text-blue-600 text-4xl font-bold">Laporan Terkini</div>
         <div className="text-center text-md">Temukan berita atau laporan terkini lainnya!</div>
         <div className="flex flex-row justify-center gap-3">
@@ -173,35 +164,11 @@ const Landing = () => {
               <div className="text-center text-sm font-sm mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.</div>
             </div>
           </div>
-          {/* Card */}
-          <div className="justify-around mt-5">
-            <div className="w-120 justify-center place-content-end px-4">
-              <img src={Layanan1} alt="Berita 2" className="w-80 mx-auto" />
-              <div className="text-center text-blue-600 font-semibold mt-5">Berita 2</div>
-              <div className="text-center text-sm font-sm mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.</div>
-            </div>
-          </div>
-          {/* Card */}
-          <div className="justify-around mt-5">
-            <div className="w-120 justify-center place-content-end px-4">
-              <img src={Layanan1} alt="Berita 3" className="w-80 mx-auto" />
-              <div className="text-center text-blue-600 font-semibold mt-5">Berita 3</div>
-              <div className="text-center text-sm font-sm mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.</div>
-            </div>
-          </div>
-          {/* Card */}
-          <div className="justify-around mt-5">
-            <div className="w-120 justify-center place-content-end px-4">
-              <img src={Layanan1} alt="Berita 4" className="w-80 mx-auto" />
-              <div className="text-center text-blue-600 font-semibold mt-5">Berita 4</div>
-              <div className="text-center text-sm font-sm mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.</div>
-            </div>
-          </div>
         </div>
       </div>
 
       {/* Kontak Kami */}
-      <div className="p-12 w-screen justify-center">
+      <div id="kontak" className="p-12 w-screen justify-center">
         <div className="bg-whiteSecondary h-3/4 p-5 rounded-lg flex flex-row gap-10">
           {/* Left content */}
           <div className="bg-blue-600 w-1/2 rounded-lg flex-col py-20 px-20">
@@ -210,6 +177,18 @@ const Landing = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               <br />
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+
+            <div className="flex flex-row gap-5">
+              <div className="mt-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                  />
+                </svg>
+              </div>
+              <div className="text-white text-base mt-4">0274-1234423</div>
             </div>
 
             <div className="flex flex-row gap-5">
@@ -237,31 +216,31 @@ const Landing = () => {
           </div>
 
           {/* Right content */}
-          <div className="bg-white rounded-lg w-1/2 flex-col py-16 px-16 justify-end ml-auto">
+          <form className="bg-white rounded-lg w-1/2 flex-col py-16 px-16 justify-end ml-auto">
             <div className="text-blue-600 font-bold text-2xl">Tulis Keluhan Anda</div>
 
-            <div className="flex flex-row gap-5 justify-between flex-wrap">
+            <div className="flex flex-row gap-5 justify-between">
               <div className="mt-5">
-                <div for="Nama">Nama Lengkap</div>
+                <label for="Nama">Nama Lengkap</label>
                 <input className="rounded-md mt-1 border-blue-600" type="text" name="" id="Nama" />
               </div>
 
               <div className="mt-5">
-                <div for="Email">Email</div>
+                <label for="Email">Email</label>
                 <input className="rounded-md mt-1 border-blue-600" type="text" name="" id="Email" />
               </div>
             </div>
 
             <div className="mt-5">
-              <div for="nohp">No Hp</div>
+              <label for="nohp">No Hp</label>
               <input className="rounded-md mt-1 border-blue-600 w-full" type="text" name="" id="nohp" />
             </div>
 
             <div className="mt-5">
-              <div for="pesan">Pesan</div>
+              <label for="pesan">Pesan</label>
               <textarea className="rounded-md mt-1 border-blue-600 w-full" type="text" name="" id="pesan" />
             </div>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -276,15 +255,22 @@ const Landing = () => {
             <div className="text-sm mt-5">Copyright ©2023 Caretakers. All Right Reserved</div>
           </div>
           <div className="justify-items-end mt-12 items-end flex flex-row gap-8">
-            <div className="text-sm hover:text-yellow-400 cursor-pointer">About</div>
-            <div className="text-sm hover:text-yellow-400 cursor-pointer">User Guide</div>
-            <div className="text-sm hover:text-yellow-400 cursor-pointer">News & Update</div>
-            <div className="text-sm hover:text-yellow-400 cursor-pointer">Contact</div>
+            <a href="#about" className="text-sm py-2 text-white hover:text-yellow-400 cursor-pointer">
+              About
+            </a>
+            <a href="#guide" className="text-sm py-2 text-white hover:text-yellow-400 cursor-pointer">
+              User Guide
+            </a>
+            <a href="#laporanTerkini" className="text-sm py-2 text-white hover:text-yellow-400 cursor-pointer">
+              News & Update
+            </a>
+            <a href="#kontak" className="text-sm py-2 text-white hover:text-yellow-400 cursor-pointer">
+              Contact
+            </a>
           </div>
         </div>
       </div>
     </div>
   );
 };
-
 export default Landing;
