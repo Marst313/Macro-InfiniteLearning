@@ -150,3 +150,21 @@ export const beritaLanding = [
     subjudul: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.",
   },
 ];
+
+export const layananLanding = [
+  {
+    id : "1",
+    judul: "Laporkan Masalah Infrastruktur",
+    subjudul: "Kami menyediakan platform yang mudah digunakan di mana Anda dapat melaporkan berbagai masalah infrastruktur, mulai dari lubang dan trotoar yang rusak hingga lampu lalu lintas yang tidak berfungsi.",
+  },
+  {
+    id : "2",
+    judul: "Pemantauan Waktu Nyata",
+    subjudul: "Kami menggunakan teknologi tercanggih untuk memantau permasalahan yang dilaporkan secara real-time. Memastikan bahwa masalah ditangani secepat mungkin.",
+  },
+  {
+    id : "3",
+    judul: "Transparansi dan Akuntabilitas",
+    subjudul: "Kami berkomitmen terhadap transparansi dalam operasi kami. Anda dapat melacak perkembangan masalah yang dilaporkan dan melihat status perbaikan yang sedang berlangsung.",
+  },
+]
