@@ -127,3 +127,26 @@ export const landingHelpers = [
     ),
   },
 ];
+
+export const beritaLanding = [
+  {
+    id : "1",
+    judul: "Berita 1",
+    subjudul: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.",
+  },
+  {
+    id : "2",
+    judul: "Berita 2",
+    subjudul: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.",
+  },
+  {
+    id : "3",
+    judul: "Berita 3",
+    subjudul: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.",
+  },
+  {
+    id : "4",
+    judul: "Berita 4",
+    subjudul: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.",
+  },
+];

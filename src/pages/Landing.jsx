@@ -7,7 +7,7 @@ import Layanan3 from '../img/layanan3.png';
 import logo from '../img/logo.svg';
 import logobw from '../img/logobw.svg';
 import { Link } from 'react-router-dom';
-import { landingHelpers } from '../utils/links/link';
+import { beritaLanding, landingHelpers } from '../utils/links/link';
 
 const Landing = () => {
   return (
@@ -90,13 +90,6 @@ const Landing = () => {
         <div className="flex flex-row justify-center gap-3">
           {/* Card */}
           <div className="justify-around mt-5">
-            <div className="w-120 justify-center place-content-end px-4">
-              <img src={Layanan1} alt="layanan 1" className="w-80 mx-auto" />
-              <div className="text-center text-blue-600 font-semibold mt-5">Laporkan Masalah Infrastruktur</div>
-              <div className="text-center text-sm font-sm mt-5">
-                Kami menyediakan platform yang mudah digunakan di mana Anda dapat melaporkan berbagai masalah infrastruktur, mulai dari lubang dan trotoar yang rusak hingga lampu lalu lintas yang tidak berfungsi.
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -144,10 +137,18 @@ const Landing = () => {
         <div className="flex flex-row justify-center gap-3">
           {/* Card */}
           <div className="justify-around mt-5">
-            <div className="w-120 justify-center place-content-end px-4">
-              <img src={Layanan1} alt="Berita 1" className="w-80 mx-auto" />
-              <div className="text-center text-blue-600 font-semibold mt-5">Berita 1</div>
-              <div className="text-center text-sm font-sm mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.</div>
+            <div className="w-120 justify-center flex flex-row">
+              {beritaLanding.map((item) => {
+                return(
+                  <div className="mt-5 w-80 mx-5 justify-center text-center place-content-end px-4" key={item.id}>
+                    <div className='w-[300px] h-[350px] bg-blue-600 p-3 rounded-lg'>
+                  <img className='rounded-lg items-center justify-center' src="" alt={item.judul} />
+                    </div>
+                <div className='mt-5 mb-3 text-blue-600 font-bold text-lg'>{item.judul}</div>
+                  <p>{item.subjudul}</p>
+                </div>
+              );
+              })}
             </div>
           </div>
         </div>
@@ -208,12 +209,12 @@ const Landing = () => {
             <div className="flex flex-row gap-5 justify-between">
               <div className="mt-5">
                 <label for="Nama">Nama Lengkap</label>
-                <input className="rounded-md mt-1 border-blue-600" type="text" name="" id="Nama" />
+                <input className="rounded-md mt-1 border-blue-600 w-[275px]" type="text" name="" id="Nama" />
               </div>
 
               <div className="mt-5">
                 <label for="Email">Email</label>
-                <input className="rounded-md mt-1 border-blue-600" type="text" name="" id="Email" />
+                <input className="rounded-md mt-1 border-blue-600 w-[275px]" type="text" name="" id="Email" />
               </div>
             </div>
 
