@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { dataPengguna } from '../utils/links/link';
+import { SingleUser } from '../components';
 
 const Datauser = () => {
-  const [edit, setEdit] = useState(false);
+  const [pengguna, setPengguna] = useState([]);
+
+  const handleDelete = (id) => {
+    const newData = pengguna.map((item) => item).filter((item) => item.id !== id);
+
+    setPengguna(newData);
+  };
+
+  useEffect(() => {
+    setPengguna(dataPengguna);
+  }, []);
 
   return (
     <main>
@@ -31,30 +42,8 @@ const Datauser = () => {
               <span>Aksi</span>
             </li>
 
-            {dataPengguna.map((pengguna) => {
-              return (
-                <li key={pengguna.id} className={`px-5 text-blackSecondary py-5 grid grid-cols-5 text-center items-center ${pengguna.id % 2 === 0 ? ' bg-[#cdbef9]  ' : ''}`}>
-                  {/* Nama Lengkap */}
-                  <div className="flex items-center gap-2 justify-center">
-                    <img src={pengguna.img} alt={pengguna.nama} className="w-5 h-5 rounded-full bg-slate-600" />
-                    <div>
-                      <h6 className="text-base text-blackSecondary">{pengguna.nama}</h6>
-                      <p className="text-xs w-20">{pengguna.nik}</p>
-                    </div>
-                  </div>
-                  {/* Email */}
-                  <p>{pengguna.email}</p>
-                  {/* No Hp */}
-                  <p>{pengguna.noHp}</p>
-                  {/* Alamat */}
-                  <p>{pengguna.alamat}</p>
-                  {/* Aksi */}
-                  <div className="flex gap-2 ">
-                    <button className="bg-[#00FF0A] text-center flex justify-center items-center w-1/2 mx-auto rounded-lg py-3">Ubah</button>
-                    <button className="bg-[#FF0000] text-center flex justify-center items-center w-1/2 mx-auto rounded-lg py-3 text-whiteSecondary">Hapus</button>
-                  </div>
-                </li>
-              );
+            {pengguna.map((pengguna) => {
+              return <SingleUser {...pengguna} key={pengguna.id} handleDelete={handleDelete} />;
             })}
           </ul>
         </div>
