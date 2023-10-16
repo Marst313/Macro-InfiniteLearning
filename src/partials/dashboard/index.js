@@ -1,5 +1,5 @@
-import WelcomeBanner from '../dashboard/WelcomeBanner';
 import Calender from '../dashboard/Calender';
 import Stats from '../dashboard/Stats';
+import WelcomeBanner from '../dashboard/WelcomeBanner';
 
-export { WelcomeBanner, Calender, Stats };
+export { Calender, Stats, WelcomeBanner };

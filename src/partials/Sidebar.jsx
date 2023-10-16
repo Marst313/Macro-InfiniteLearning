@@ -2,10 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import SidebarLinkGroup from './SidebarLinkGroup';
+import { adminSidebar, userSidebar } from '../utils/links/link';
+import { useUserContext } from '../utils/userContext';
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const location = useLocation();
   const { pathname } = location;
+
+  const { user } = useUserContext();
 
   const trigger = useRef(null);
   const sidebar = useRef(null);
@@ -158,26 +162,27 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && 'hidden'}`}>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink end to="/report/laporansaya" className={({ isActive }) => 'flex items-center transition duration-150 truncate ' + (isActive ? 'text-whiteSecondary' : 'text-whiteSecondary')}>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-plus" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z" />
-                                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
-                                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
-                              </svg>
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 ml-2 ">Laporan Saya</span>
-                            </NavLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink end to="/report/laporanterkini" className={({ isActive }) => 'flex items-center transition duration-150 truncate ' + (isActive ? 'text-whiteSecondary' : 'text-whiteSecondary')}>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
-                                <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z" />
-                                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
-                                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
-                              </svg>
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 ml-2">Laporan Terkini</span>
-                            </NavLink>
-                          </li>
+                          {user === 'Admin'
+                            ? adminSidebar.map((link) => {
+                                return (
+                                  <li className="mb-1 last:mb-0" key={link.id}>
+                                    <NavLink end to={link.path} className={({ isActive }) => 'flex items-center transition duration-150 truncate ' + (isActive ? 'text-whiteSecondary' : 'text-whiteSecondary')}>
+                                      {link.svg}
+                                      <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 ml-2 ">{link.name}</span>
+                                    </NavLink>
+                                  </li>
+                                );
+                              })
+                            : userSidebar.map((link) => {
+                                return (
+                                  <li className="mb-1 last:mb-0" key={link.id}>
+                                    <NavLink end to={link.path} className={({ isActive }) => 'flex items-center transition duration-150 truncate ' + (isActive ? 'text-whiteSecondary' : 'text-whiteSecondary')}>
+                                      {link.svg}
+                                      <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 ml-2 ">{link.name}</span>
+                                    </NavLink>
+                                  </li>
+                                );
+                              })}
                         </ul>
                       </div>
                     </React.Fragment>

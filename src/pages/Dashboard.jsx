@@ -1,8 +1,16 @@
 import React from 'react';
 
 import { Calender, Stats, WelcomeBanner } from '../partials/dashboard/';
+import { useUserContext } from '../utils/userContext';
+import { DashboardAdmin } from './';
 
 function Dashboard() {
+  const { user } = useUserContext();
+
+  if (user === 'Admin') {
+    return <DashboardAdmin />;
+  }
+
   return (
     <main>
       <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto mt-3">

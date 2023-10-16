@@ -1,7 +1,7 @@
 import React from 'react';
 import { useUserContext } from '../../utils/userContext';
 
-function WelcomeBanner() {
+function WelcomeBanner({ admin }) {
   const { email, user } = useUserContext();
 
   return (
@@ -50,9 +50,19 @@ function WelcomeBanner() {
 
       {/* Content */}
       <div className="relative">
-        <h1 className="text-2xl md:text-3xl text-whiteSecondary  font-bold mb-1">{user === 'Admin' ? 'Welcome Back Admin  !👋' : `Hallo ${email.split('@')[0] || 'Ganjer'} !👋`}</h1>
-        <p className="text-whiteSecondary italic">Selamat datang di Caretakers</p>
-        <p className="text-whiteSecondary">Mari kita mulai hari ini dengan semangat. Gunakan dashboard ini untuk melaporakan keluhanmu.</p>
+        {admin ? (
+          <>
+            <h1 className="text-2xl md:text-3xl text-whiteSecondary  font-bold mb-1">Welcome Back Admin !👋</h1>
+            <p className="text-whiteSecondary italic">Silahkan Evaluasi Laporan Hari Ini</p>
+            <p className="text-whiteSecondary">Mari kita mulai hari ini dengan semangat. Jangan lupa evaluasi laporan hari ini !</p>
+          </>
+        ) : (
+          <>
+            <h1 className="text-2xl md:text-3xl text-whiteSecondary  font-bold mb-1">{`Hallo ${email.split('@')[0] || 'Ganjer'} !👋`}</h1>
+            <p className="text-whiteSecondary italic">Selamat datang di Caretakers</p>
+            <p className="text-whiteSecondary">Mari kita mulai hari ini dengan semangat. Gunakan dashboard ini untuk melaporakan keluhanmu.</p>
+          </>
+        )}
       </div>
     </div>
   );

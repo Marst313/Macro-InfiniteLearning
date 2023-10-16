@@ -151,3 +151,6 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.shadow-custom {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}

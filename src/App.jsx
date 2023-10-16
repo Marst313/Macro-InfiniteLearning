@@ -5,7 +5,8 @@ import './css/style.css';
 
 // Import pages
 
-import { CreateReport, LaporanSaya, Dashboard, SharedLayout, LaporanTerkini, Profile, Signin, Signup, Landing } from './pages';
+import { CreateReport, LaporanSaya, Dashboard, SharedLayout, LaporanTerkini, Profile, Signin, Signup, Landing, Datauser } from './pages';
+import {} from './partials/dashboard';
 
 function App() {
   const location = useLocation();
@@ -24,6 +25,7 @@ function App() {
           <Route path="report/laporansaya" element={<LaporanSaya />} />
           <Route path="report/laporansaya/laporanbaru" element={<CreateReport />} />
           <Route path="report/laporanterkini" element={<LaporanTerkini />} />
+          <Route path="report/datauser" element={<Datauser />} />
           <Route path="profile" element={<Profile />} />
         </Route>
         <Route path="signin" element={<Signin />} />
