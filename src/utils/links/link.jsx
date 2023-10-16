@@ -49,3 +49,81 @@ export const userSidebar = [
     path: '/report/laporanterkini',
   },
 ];
+
+export const dataPengguna = [
+  {
+    id: 1,
+    nama: 'Ganjar',
+    nik: '3124127241',
+    email: 'ganjar@gmail.com',
+    noHp: '+62 822224444',
+    alamat: 'Jalan Singodimejo',
+    img: '',
+  },
+  {
+    id: 2,
+    nama: 'Lucas',
+    nik: '3122131141',
+    email: 'lucaslusi@gmail.com',
+    noHp: '+62 8332231321',
+    alamat: 'Dijalan yang kemarin',
+    img: '',
+  },
+  {
+    id: 3,
+    nama: 'Sarah',
+    nik: '4123123123',
+    email: 'sarah@example.com',
+    noHp: '+62 8221234567',
+    alamat: 'Jalan Pohon Bunga',
+    img: 'sarah.jpg',
+  },
+  {
+    id: 4,
+    nama: 'Evan',
+    nik: '5125125125',
+    email: 'evan@example.com',
+    noHp: '+62 8112345678',
+    alamat: 'Jalan Sejuk Indah',
+    img: 'evan.jpg',
+  },
+];
+
+export const landingHelpers = [
+  {
+    id: 1,
+    title: 'Buat Laporan',
+    svg: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="75" height="100" fill="#0057FF" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
+        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z" />
+      </svg>
+    ),
+  },
+  {
+    id: 2,
+    title: 'Verifikasi Laporan',
+    svg: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="75" height="100" fill="#0057FF" class="bi bi-file-earmark-check-fill" viewBox="0 0 16 16">
+        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm1.354 4.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
+      </svg>
+    ),
+  },
+  {
+    id: 3,
+    title: 'Tindak Lanjut Laporan',
+    svg: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="75" height="100" viewBox="0 0 24 24" fill="#0057FF">
+        <path d="M12 2h-1v9H2v1a10 10 0 0 0 17.07 7.07A10 10 0 0 0 12 2z"></path>
+      </svg>
+    ),
+  },
+  {
+    id: 4,
+    title: 'Selesai',
+    svg: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="75" height="100" fill="#0057FF" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+      </svg>
+    ),
+  },
+];

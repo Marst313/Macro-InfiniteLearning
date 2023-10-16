@@ -26,6 +26,8 @@ function App() {
           <Route path="report/laporansaya/laporanbaru" element={<CreateReport />} />
           <Route path="report/laporanterkini" element={<LaporanTerkini />} />
           <Route path="report/datauser" element={<Datauser />} />
+          <Route path="report/datalaporan" element={<Datauser />} />
+
           <Route path="profile" element={<Profile />} />
         </Route>
         <Route path="signin" element={<Signin />} />
