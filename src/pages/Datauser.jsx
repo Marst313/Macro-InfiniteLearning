@@ -4,6 +4,7 @@ import { SingleUser } from '../components';
 
 const Datauser = () => {
   const [pengguna, setPengguna] = useState([]);
+  const [search, setSearch] = useState('');
 
   const handleDelete = (id) => {
     const newData = pengguna.map((item) => item).filter((item) => item.id !== id);
@@ -14,6 +15,18 @@ const Datauser = () => {
   useEffect(() => {
     setPengguna(dataPengguna);
   }, []);
+
+  useEffect(() => {
+    const searchData = pengguna.filter((item) => {
+      return item.nama.toLowerCase().includes(search.toLowerCase());
+    });
+
+    setPengguna(searchData);
+
+    if (search === '') {
+      setPengguna(dataPengguna);
+    }
+  }, [search]);
 
   return (
     <main>
@@ -27,7 +40,7 @@ const Datauser = () => {
                 <path className="fill-current text-bg-primary" d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z" />
                 <path className="fill-current text-bg-primary" d="M15.707 14.293L13.314 11.9a8.019 8.019 0 01-1.414 1.414l2.393 2.393a.997.997 0 001.414 0 .999.999 0 000-1.414z" />
               </svg>
-              <input type="text" placeholder="Search Pengguna" className="px-5 py-2 rounded-lg w-96 border-bg-primary pl-7 placeholder:opacity-50 placeholder:text-bg-primary" />
+              <input type="text" placeholder="Search Pengguna" className="px-5 py-2 rounded-lg w-96 border-bg-primary pl-7 placeholder:opacity-50 placeholder:text-bg-primary" onChange={(e) => setSearch(e.target.value)} />
             </form>
           </div>
         </div>

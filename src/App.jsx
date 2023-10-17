@@ -5,7 +5,7 @@ import './css/style.css';
 
 // Import pages
 
-import { CreateReport, LaporanSaya, Dashboard, SharedLayout, LaporanTerkini, Profile, Signin, Signup, Landing, Datauser, DataLaporan } from './pages';
+import { CreateReport, LaporanSaya, Dashboard, SharedLayout, LaporanTerkini, Profile, Signin, Signup, Landing, Datauser, DataLaporan, DetailLaporan, DataDetailLaporan } from './pages';
 import {} from './partials/dashboard';
 
 function App() {
@@ -25,8 +25,10 @@ function App() {
           <Route path="report/laporansaya" element={<LaporanSaya />} />
           <Route path="report/laporansaya/laporanbaru" element={<CreateReport />} />
           <Route path="report/laporanterkini" element={<LaporanTerkini />} />
+          <Route path="report/laporanterkini/detaillaporan" element={<DetailLaporan />} />
           <Route path="report/datauser" element={<Datauser />} />
           <Route path="report/datalaporan" element={<DataLaporan />} />
+          <Route path="report/datalaporan/detaillaporan" element={<DataDetailLaporan />} />
 
           <Route path="profile" element={<Profile />} />
         </Route>

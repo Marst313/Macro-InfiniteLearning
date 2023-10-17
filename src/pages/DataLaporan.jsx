@@ -1,7 +1,9 @@
 import React from 'react';
 import { dataLaporan } from '../utils/links/link';
+import { useNavigate } from 'react-router-dom';
 
 const DataLaporan = () => {
+  const navigate = useNavigate();
   return (
     <main>
       <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto mt-3">
@@ -48,7 +50,7 @@ const DataLaporan = () => {
           <ul className="grid grid-cols-3 max-[800px]:grid-cols-1 max-[1300px]:grid-cols-2 gap-5 ">
             {dataLaporan.map((item) => {
               return (
-                <li key={item.id} className="justify-center bottom-2 border-solid border-2  border-sky-500 w-auto rounded-xl p-2 ">
+                <li onClick={() => navigate('/report/datalaporan/detaillaporan')} key={item.id} className="justify-center bottom-2 border-solid border-2  border-sky-500 w-auto rounded-xl p-2 cursor-pointer hover:border-sky-700">
                   <img className="w-full h-80 mb-3 rounded-lg " src="https://picsum.photos/360/240" alt={item.jalan} />
                   <h1 className="text-[20px] bold align-middle font-bold flex items-center ">{item.jalan}</h1>
                   <div className="  flex flex-col items-center  ">

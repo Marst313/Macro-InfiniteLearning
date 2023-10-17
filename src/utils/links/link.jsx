@@ -195,3 +195,30 @@ export const layananLanding = [
     subjudul: 'Kami berkomitmen terhadap transparansi dalam operasi kami. Anda dapat melacak perkembangan masalah yang dilaporkan dan melihat status perbaikan yang sedang berlangsung.',
   },
 ];
+
+export const laporanSaya = [
+  {
+    id: 1,
+    name: 'Ganjer',
+    tanggal: '25-06-2023',
+    tipeRusak: 'Parah',
+    jalan: 'Jalan Singodimejo',
+    status: 'Prosess',
+  },
+  {
+    id: 2,
+    name: 'Ganjer',
+    tanggal: '30-06-2023',
+    tipeRusak: 'Parah',
+    jalan: 'Jalan Singolangu',
+    status: 'Selesai',
+  },
+  {
+    id: 3,
+    name: 'Ganjer',
+    tanggal: '01-07-2023',
+    tipeRusak: 'Sedang',
+    jalan: 'Jalan Singori',
+    status: 'Pending',
+  },
+];

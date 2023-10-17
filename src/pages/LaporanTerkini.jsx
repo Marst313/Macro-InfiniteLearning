@@ -1,7 +1,9 @@
 import React from 'react';
 import { dataLaporan } from '../utils/links/link';
+import { useNavigate } from 'react-router-dom';
 
 const LaporanTerkini = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-5 justify-center  align-middle mt-10 px-10 max-[1300px]:mt-0">
       <div className="h-[44px]  flex flex-row gap-2 w-full align-middle ">
@@ -28,8 +30,8 @@ const LaporanTerkini = () => {
       <ul className="grid grid-cols-3 max-[800px]:grid-cols-1 max-[1300px]:grid-cols-2 gap-5 ">
         {dataLaporan.map((item) => {
           return (
-            <li key={item.id} className="justify-center bottom-2 border-solid border-2  border-sky-500 w-auto rounded-xl p-2 ">
-              <img className="w-full h-80 mb-3 rounded-lg " src="https://picsum.photos/360/240" alt={item.jalan} />
+            <li onClick={() => navigate('detaillaporan')} key={item.id} className="justify-center bottom-2 border-solid border-2  border-sky-500 w-auto rounded-xl p-2 cursor-pointer hover:border-sky-700 group">
+              <img className="w-full h-80 mb-3 rounded-lg group-hover:bg-whiteSecondary " src="https://picsum.photos/360/240" alt={item.jalan} />
               <h1 className="text-[20px] bold align-middle font-bold flex items-center ">{item.jalan}</h1>
               <div className="  flex flex-col items-center  ">
                 <div className="flex flex-row w-full h-7">
