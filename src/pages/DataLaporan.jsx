@@ -1,10 +1,10 @@
 import React from 'react';
+import { dataLaporan } from '../utils/links/link';
 
 const DataLaporan = () => {
   return (
     <main>
       <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto mt-3">
-        {' '}
         <div className="flex flex-col gap-5 justify-center  align-middle mt-10 px-10 max-[1300px]:mt-0">
           <div className="h-[44px]  flex flex-row gap-2 w-full align-middle ">
             <div className="basis-full">
@@ -45,143 +45,45 @@ const DataLaporan = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 max-[800px]:grid-cols-1 max-[1300px]:grid-cols-2 gap-5 ">
-            <div className="justify-center bottom-2 border-solid border-2  border-sky-500 w-auto rounded-xl p-2 ">
-              <img className="w-full h-80 mb-3 rounded-lg " src="https://picsum.photos/360/240" alt="" />
-              <h1 className="text-[20px] bold align-middle font-bold flex items-center ">jalannya sampai sini </h1>
-              <div className="  flex flex-col items-center  ">
-                <div className="flex flex-row w-full h-7">
-                  <div className=" basis-full ">
-                    <p className="text-xs/[28px] font-bold">Rusak Berat</p>
+          <ul className="grid grid-cols-3 max-[800px]:grid-cols-1 max-[1300px]:grid-cols-2 gap-5 ">
+            {dataLaporan.map((item) => {
+              return (
+                <li key={item.id} className="justify-center bottom-2 border-solid border-2  border-sky-500 w-auto rounded-xl p-2 ">
+                  <img className="w-full h-80 mb-3 rounded-lg " src="https://picsum.photos/360/240" alt={item.jalan} />
+                  <h1 className="text-[20px] bold align-middle font-bold flex items-center ">{item.jalan}</h1>
+                  <div className="  flex flex-col items-center  ">
+                    <div className="flex flex-row w-full h-7">
+                      <div className=" basis-full ">
+                        <p className="text-xs/[28px] font-bold">{item.tipeRusak}</p>
+                      </div>
+                      <div className="basis-0 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="calendar">
+                          <g fill="none" fill-rule="evenodd" stroke="#200E32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" transform="translate(3 2)">
+                            <line x1=".093" x2="17.917" y1="7.404" y2="7.404"></line>
+                            <line x1="13.442" x2="13.451" y1="11.31" y2="11.31"></line>
+                            <line x1="9.005" x2="9.014" y1="11.31" y2="11.31"></line>
+                            <line x1="4.558" x2="4.567" y1="11.31" y2="11.31"></line>
+                            <line x1="13.442" x2="13.451" y1="15.196" y2="15.196"></line>
+                            <line x1="9.005" x2="9.014" y1="15.196" y2="15.196"></line>
+                            <line x1="4.558" x2="4.567" y1="15.196" y2="15.196"></line>
+                            <line x1="13.044" x2="13.044" y2="3.291"></line>
+                            <line x1="4.966" x2="4.966" y2="3.291"></line>
+                            <path d="M13.2382655,1.57919622 L4.77096342,1.57919622 C1.83427331,1.57919622 0,3.21513002 0,6.22222222 L0,15.2718676 C0,18.3262411 1.83427331,20 4.77096342,20 L13.2290015,20 C16.1749556,20 18,18.3546099 18,15.3475177 L18,6.22222222 C18.0092289,3.21513002 16.1842196,1.57919622 13.2382655,1.57919622 Z"></path>
+                          </g>
+                        </svg>
+                      </div>
+                      <div className="basis-1/3 ">
+                        <p className="h-full text-xs/[28px] text-right w-full ">{item.tanggal}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="basis-0 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="calendar">
-                      <g fill="none" fill-rule="evenodd" stroke="#200E32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" transform="translate(3 2)">
-                        <line x1=".093" x2="17.917" y1="7.404" y2="7.404"></line>
-                        <line x1="13.442" x2="13.451" y1="11.31" y2="11.31"></line>
-                        <line x1="9.005" x2="9.014" y1="11.31" y2="11.31"></line>
-                        <line x1="4.558" x2="4.567" y1="11.31" y2="11.31"></line>
-                        <line x1="13.442" x2="13.451" y1="15.196" y2="15.196"></line>
-                        <line x1="9.005" x2="9.014" y1="15.196" y2="15.196"></line>
-                        <line x1="4.558" x2="4.567" y1="15.196" y2="15.196"></line>
-                        <line x1="13.044" x2="13.044" y2="3.291"></line>
-                        <line x1="4.966" x2="4.966" y2="3.291"></line>
-                        <path d="M13.2382655,1.57919622 L4.77096342,1.57919622 C1.83427331,1.57919622 0,3.21513002 0,6.22222222 L0,15.2718676 C0,18.3262411 1.83427331,20 4.77096342,20 L13.2290015,20 C16.1749556,20 18,18.3546099 18,15.3475177 L18,6.22222222 C18.0092289,3.21513002 16.1842196,1.57919622 13.2382655,1.57919622 Z"></path>
-                      </g>
-                    </svg>
+                  <div className="h-10">
+                    <p className="text-[#78778B] text-xs/[28px]">{item.deskripsi.slice(0, 30)}...</p>
                   </div>
-                  <div className="basis-1/3 ">
-                    <p className="h-full text-xs/[28px] text-right w-full ">09-09-2019</p>
-                  </div>
-                </div>
-              </div>
-              <div className="">
-                <p className="text-[#78778B] text-xs/[28px]">Lorem ipsum dolor sit,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, similique!</p>
-              </div>
-            </div>
-
-            <div className="justify-center bottom-2 border-solid border-2  border-sky-500 w-auto rounded-xl p-2 ">
-              <img className="w-full h-80 mb-3 rounded-lg " src="https://picsum.photos/360/240" alt="" />
-              <h1 className="text-[20px] bold align-middle font-bold flex items-center ">jalannya sampai sini </h1>
-              <div className="  flex flex-col items-center  ">
-                <div className="flex flex-row w-full h-7">
-                  <div className=" basis-full ">
-                    <p className="text-xs/[28px] font-bold">Rusak Berat</p>
-                  </div>
-                  <div className="basis-0 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="calendar">
-                      <g fill="none" fill-rule="evenodd" stroke="#200E32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" transform="translate(3 2)">
-                        <line x1=".093" x2="17.917" y1="7.404" y2="7.404"></line>
-                        <line x1="13.442" x2="13.451" y1="11.31" y2="11.31"></line>
-                        <line x1="9.005" x2="9.014" y1="11.31" y2="11.31"></line>
-                        <line x1="4.558" x2="4.567" y1="11.31" y2="11.31"></line>
-                        <line x1="13.442" x2="13.451" y1="15.196" y2="15.196"></line>
-                        <line x1="9.005" x2="9.014" y1="15.196" y2="15.196"></line>
-                        <line x1="4.558" x2="4.567" y1="15.196" y2="15.196"></line>
-                        <line x1="13.044" x2="13.044" y2="3.291"></line>
-                        <line x1="4.966" x2="4.966" y2="3.291"></line>
-                        <path d="M13.2382655,1.57919622 L4.77096342,1.57919622 C1.83427331,1.57919622 0,3.21513002 0,6.22222222 L0,15.2718676 C0,18.3262411 1.83427331,20 4.77096342,20 L13.2290015,20 C16.1749556,20 18,18.3546099 18,15.3475177 L18,6.22222222 C18.0092289,3.21513002 16.1842196,1.57919622 13.2382655,1.57919622 Z"></path>
-                      </g>
-                    </svg>
-                  </div>
-                  <div className="basis-1/3 ">
-                    <p className="h-full text-xs/[28px] text-right w-full ">09-09-2019</p>
-                  </div>
-                </div>
-              </div>
-              <div className="">
-                <p className="text-[#78778B] text-xs/[28px]">Lorem ipsum dolor sit,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, similique!</p>
-              </div>
-            </div>
-
-            <div className="justify-center bottom-2 border-solid border-2  border-sky-500 w-auto rounded-xl p-2 ">
-              <img className="w-full h-80 mb-3 rounded-lg " src="https://picsum.photos/360/240" alt="" />
-              <h1 className="text-[20px] bold align-middle font-bold flex items-center ">jalannya sampai sini </h1>
-              <div className="  flex flex-col items-center  ">
-                <div className="flex flex-row w-full h-7">
-                  <div className=" basis-full ">
-                    <p className="text-xs/[28px] font-bold">Rusak Berat</p>
-                  </div>
-                  <div className="basis-0 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="calendar">
-                      <g fill="none" fill-rule="evenodd" stroke="#200E32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" transform="translate(3 2)">
-                        <line x1=".093" x2="17.917" y1="7.404" y2="7.404"></line>
-                        <line x1="13.442" x2="13.451" y1="11.31" y2="11.31"></line>
-                        <line x1="9.005" x2="9.014" y1="11.31" y2="11.31"></line>
-                        <line x1="4.558" x2="4.567" y1="11.31" y2="11.31"></line>
-                        <line x1="13.442" x2="13.451" y1="15.196" y2="15.196"></line>
-                        <line x1="9.005" x2="9.014" y1="15.196" y2="15.196"></line>
-                        <line x1="4.558" x2="4.567" y1="15.196" y2="15.196"></line>
-                        <line x1="13.044" x2="13.044" y2="3.291"></line>
-                        <line x1="4.966" x2="4.966" y2="3.291"></line>
-                        <path d="M13.2382655,1.57919622 L4.77096342,1.57919622 C1.83427331,1.57919622 0,3.21513002 0,6.22222222 L0,15.2718676 C0,18.3262411 1.83427331,20 4.77096342,20 L13.2290015,20 C16.1749556,20 18,18.3546099 18,15.3475177 L18,6.22222222 C18.0092289,3.21513002 16.1842196,1.57919622 13.2382655,1.57919622 Z"></path>
-                      </g>
-                    </svg>
-                  </div>
-                  <div className="basis-1/3 ">
-                    <p className="h-full text-xs/[28px] text-right w-full ">09-09-2019</p>
-                  </div>
-                </div>
-              </div>
-              <div className="">
-                <p className="text-[#78778B] text-xs/[28px]">Lorem ipsum dolor sit,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, similique!</p>
-              </div>
-            </div>
-
-            <div className="justify-center bottom-2 border-solid border-2  border-sky-500 w-auto rounded-xl p-2 ">
-              <img className="w-full h-80 mb-3 rounded-lg " src="https://picsum.photos/360/240" alt="" />
-              <h1 className="text-[20px] bold align-middle font-bold flex items-center ">jalannya sampai sini </h1>
-              <div className="  flex flex-col items-center  ">
-                <div className="flex flex-row w-full h-7">
-                  <div className=" basis-full ">
-                    <p className="text-xs/[28px] font-bold">Rusak Berat</p>
-                  </div>
-                  <div className="basis-0 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="calendar">
-                      <g fill="none" fill-rule="evenodd" stroke="#200E32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" transform="translate(3 2)">
-                        <line x1=".093" x2="17.917" y1="7.404" y2="7.404"></line>
-                        <line x1="13.442" x2="13.451" y1="11.31" y2="11.31"></line>
-                        <line x1="9.005" x2="9.014" y1="11.31" y2="11.31"></line>
-                        <line x1="4.558" x2="4.567" y1="11.31" y2="11.31"></line>
-                        <line x1="13.442" x2="13.451" y1="15.196" y2="15.196"></line>
-                        <line x1="9.005" x2="9.014" y1="15.196" y2="15.196"></line>
-                        <line x1="4.558" x2="4.567" y1="15.196" y2="15.196"></line>
-                        <line x1="13.044" x2="13.044" y2="3.291"></line>
-                        <line x1="4.966" x2="4.966" y2="3.291"></line>
-                        <path d="M13.2382655,1.57919622 L4.77096342,1.57919622 C1.83427331,1.57919622 0,3.21513002 0,6.22222222 L0,15.2718676 C0,18.3262411 1.83427331,20 4.77096342,20 L13.2290015,20 C16.1749556,20 18,18.3546099 18,15.3475177 L18,6.22222222 C18.0092289,3.21513002 16.1842196,1.57919622 13.2382655,1.57919622 Z"></path>
-                      </g>
-                    </svg>
-                  </div>
-                  <div className="basis-1/3 ">
-                    <p className="h-full text-xs/[28px] text-right w-full ">09-09-2019</p>
-                  </div>
-                </div>
-              </div>
-              <div className="">
-                <p className="text-[#78778B] text-xs/[28px]">Lorem ipsum dolor sit,Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, similique!</p>
-              </div>
-            </div>
-          </div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </main>
