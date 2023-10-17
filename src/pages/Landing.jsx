@@ -1,19 +1,17 @@
 import React from 'react';
 import Foto from '../img/people.png';
 import Cerita from '../img/cerita.png';
-import Layanan1 from '../img/layanan1.png';
-import Layanan2 from '../img/layanan2.png';
-import Layanan3 from '../img/layanan3.png';
 import logo from '../img/logo.svg';
 import logobw from '../img/logobw.svg';
+import layanan1 from '../img/layanan1.png';
 import { Link } from 'react-router-dom';
-import { beritaLanding, landingHelpers } from '../utils/links/link';
+import { beritaLanding, landingHelpers, layananLanding } from '../utils/links/link';
 
 const Landing = () => {
   return (
     <div>
       {/* Navbar */}
-      <div className="bg-white  h-14 flex flex-row items-center gap-x-6 justify-between px-32 py-8">
+      <div className="bg-white w-screen h-14 flex flex-row items-center gap-x-6 justify-between px-32 py-8">
         <div className="justify-items-start">
           <div className="flex flex-row gap-5">
             <img src={logobw} alt="logo" />
@@ -84,19 +82,30 @@ const Landing = () => {
       </div>
 
       {/* Layanan Kami */}
-      <div id="layananKami" className="w-screen p-10">
+      <div id="layananKami" className="w-screen px-10">
         <div className="text-center text-blue-600 text-4xl font-bold">Layanan Kami</div>
         <div className="text-center text-md">Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
         <div className="flex flex-row justify-center gap-3">
           {/* Card */}
-          <div className="justify-around mt-5">
-          </div>
+          <ul className="justify-center mt-5 flex flex-row gap-5">
+            {layananLanding.map((item) => {
+              return (
+                <li className="w-[400px] justify-center text-center px-4" key={item.id}>
+                  <div className='flex flex-col items-center justify-center'>
+                    <img className='rounded-lg' src={layanan1} alt={item.judul} />
+                    <div className='mt-5 mb-3 text-blue-600 font-bold text-lg'>{item.judul}</div>
+                    <p className="text-center text-sm font-sm">{item.subjudul}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
 
       {/* Cara Kerja Page */}
-      <div id="caraKerja" className="w-screen px-32 relative">
-        <div className="w-[75%] h-[2px] bg-[#66B3FF] absolute bottom-0 mb-16 -z-60 ml-16"></div>
+      <div id="caraKerja" className="w-screen py-10 px-32 relative">
+        <div className="w-[75%] h-[2px] bg-[#66B3FF] absolute bottom-0 mb-28 -z-60 ml-16"></div>
         <div className="text-center text-blue-600 text-4xl font-bold mt-10">Bagaimana Situs Web Ini Dapat Membantu Anda?</div>
         <div className="text-center text-md">Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
         <ul className="flex flex-row justify-between gap-12 mt-5  ">
@@ -112,7 +121,7 @@ const Landing = () => {
       </div>
 
       {/* User guide */}
-      <div id="guide" className="p-16">
+      <div id="guide" className="w-screen p-16">
         <div className="bg-blue-600 w-100  mt-10 px-1 py-1 flex flex-row rounded-lg">
           {/* Text */}
           <div className="flex-col w-1/2 justify-start content-center text-white mx-16 my-28">
@@ -125,8 +134,10 @@ const Landing = () => {
               <br />
               Yuk tonton tutorial berikut.
             </div>
-            <div className="font-bold text-sm hover:text-yellow-400">Get Started →</div>
+            <div className="font-bold text-sm hover:text-yellow-400 cursor-pointer">Get Started →</div>
           </div>
+          {/* video */}
+          <div className='bg-whiteSecondary w-1/2 rounded-r-lg cursor-pointer'></div>
         </div>
       </div>
 
@@ -140,11 +151,11 @@ const Landing = () => {
             <div className="w-120 justify-center flex flex-row">
               {beritaLanding.map((item) => {
                 return(
-                  <div className="mt-5 w-80 mx-5 justify-center text-center place-content-end px-4" key={item.id}>
+                  <div className="mt-5 w-80 mx-5 justify-center text-center px-4" key={item.id}>
                     <div className='w-[300px] h-[350px] bg-blue-600 p-3 rounded-lg'>
                   <img className='rounded-lg items-center justify-center' src="" alt={item.judul} />
                     </div>
-                <div className='mt-5 mb-3 text-blue-600 font-bold text-lg'>{item.judul}</div>
+                <div className='mt-5 mb-3 text-blue-600 font-bold text-lg cursor-pointer'>{item.judul}</div>
                   <p>{item.subjudul}</p>
                 </div>
               );
@@ -232,7 +243,7 @@ const Landing = () => {
       </div>
 
       {/* Footer */}
-      <div className=" bg-blue-600 p-16">
+      <div className=" w-screen bg-blue-600 p-16">
         <div className="flex flex-row items-center gap-x-6 justify-between text-white">
           <div className="justify-items-start">
             <div className="flex flex-row gap-5">
