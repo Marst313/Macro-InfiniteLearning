@@ -160,9 +160,9 @@ const Landing = () => {
               {dataLaporan.map((item) => {
                 return(
                   <div className="mt-5 w-80 mx-5 justify-center text-center px-4" key={item.id}>
-                  <img className='w-[300px] h-[350px] rounded-lg items-center justify-center' src={item.img} alt={item.judul} />
-                <div className='mt-5 mb-3 text-blue-600 font-bold text-lg cursor-pointer'>{item.judul}</div>
-                  <p>{item.text}</p>
+                  <img className='w-[300px] h-[350px] rounded-lg items-center justify-center' src={item.img} alt={item.jalan} />
+                <div className='mt-5 mb-3 text-blue-600 font-bold text-lg cursor-pointer'>{item.jalan}</div>
+                  <p>{item.deskripsi}</p>
                 </div>
               );
               })}
