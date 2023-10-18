@@ -1,11 +1,13 @@
 import React from 'react';
-import Foto from '../img/people.png';
-import Cerita from '../img/cerita.png';
+import Foto from '../img/people.svg';
+import Cerita from '../img/cerita.svg';
 import logo from '../img/logo.svg';
 import logobw from '../img/logobw.svg';
-import layanan1 from '../img/layanan1.png';
+import layanan1 from '../img/layanan1.svg';
+import layanan2 from '../img/layanan2.svg';
+import layanan3 from '../img/layanan3.svg';
 import { Link } from 'react-router-dom';
-import { beritaLanding, landingHelpers, layananLanding } from '../utils/links/link';
+import { beritaLanding, dataLaporan, landingHelpers, layananLanding } from '../utils/links/link';
 
 const Landing = () => {
   return (
@@ -66,7 +68,7 @@ const Landing = () => {
       {/* tentang perusahaan */}
       <div id="about" className="w-screen">
         <div className="text-center text-blue-600 text-4xl font-bold mt-10">Tentang Perusahaan</div>
-        <div className="text-center text-md">Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
+        <div className="text-center text-md mt-3">Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
         <div className="flex flex-row">
           <div className="bg-bg-primary w-5/12 h-96 mt-5 text-center text-white py-12 px-24 flex flex-col place-content-center rounded-r-lg">
             <div className="font-bold text-4xl">Cerita Kita</div>
@@ -84,22 +86,26 @@ const Landing = () => {
       {/* Layanan Kami */}
       <div id="layananKami" className="w-screen px-10">
         <div className="text-center text-blue-600 text-4xl font-bold">Layanan Kami</div>
-        <div className="text-center text-md">Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
+        <div className="text-center text-md mt-3">Kami menyediakan layanan pelaporan masalah infrastruktur, pemantauan waktu nyata, serta transparansi dan akuntabilitas untuk mendukung keberhasilan Anda</div>
         <div className="flex flex-row justify-center gap-3">
           {/* Card */}
           <ul className="justify-center mt-5 flex flex-row gap-5">
-            {layananLanding.map((item) => {
+            {layananLanding.map((item, index) => {
+
+              const gambar = [layanan1, layanan2, layanan3][index];
+
               return (
                 <li className="w-[400px] justify-center text-center px-4" key={item.id}>
                   <div className='flex flex-col items-center justify-center'>
-                    <img className='rounded-lg' src={layanan1} alt={item.judul} />
+                    <img className='rounded-lg w-[350px] h-[200px]' src={gambar} alt={item.judul} />
                     <div className='mt-5 mb-3 text-blue-600 font-bold text-lg'>{item.judul}</div>
-                    <p className="text-center text-sm font-sm">{item.subjudul}</p>
+                    <p className="text-center text-sm font-sm">{item.text}</p>
                   </div>
                 </li>
               );
             })}
           </ul>
+
         </div>
       </div>
 
@@ -107,7 +113,7 @@ const Landing = () => {
       <div id="caraKerja" className="w-screen py-10 px-32 relative">
         <div className="w-[75%] h-[2px] bg-[#66B3FF] absolute bottom-0 mb-28 -z-60 ml-16"></div>
         <div className="text-center text-blue-600 text-4xl font-bold mt-10">Bagaimana Situs Web Ini Dapat Membantu Anda?</div>
-        <div className="text-center text-md">Kenali lebih lanjut tentang diperusahaan dan tim dibaliknya</div>
+        <div className="text-center text-md mt-3">Buat laporan, verifikasi data, optimalkan proses, dan capai hasil optimal dengan situs web ini!</div>
         <ul className="flex flex-row justify-between gap-12 mt-5  ">
           {landingHelpers.map((item) => {
             return (
@@ -122,7 +128,7 @@ const Landing = () => {
 
       {/* User guide */}
       <div id="guide" className="w-screen p-16">
-        <div className="bg-blue-600 w-100  mt-10 px-1 py-1 flex flex-row rounded-lg">
+        <div className="bg-blue-600 w-100 px-1 py-1 flex flex-row rounded-lg">
           {/* Text */}
           <div className="flex-col w-1/2 justify-start content-center text-white mx-16 my-28">
             <div className="font-bold text-4xl">
@@ -137,26 +143,26 @@ const Landing = () => {
             <div className="font-bold text-sm hover:text-yellow-400 cursor-pointer">Get Started →</div>
           </div>
           {/* video */}
-          <div className='bg-whiteSecondary w-1/2 rounded-r-lg cursor-pointer'></div>
+          <div className='bg-whiteSecondary w-3/4 rounded-r-lg cursor-pointer'>
+            <iframe className='rounded-r-lg' width="780" height="430" src="https://www.youtube.com/embed/CDeL8Dc1I_4" title="tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
 
       {/* Laporan Terkini */}
       <div id="laporanTerkini" className="w-screen px-10">
         <div className="text-center text-blue-600 text-4xl font-bold">Laporan Terkini</div>
-        <div className="text-center text-md">Temukan berita atau laporan terkini lainnya!</div>
+        <div className="text-center text-md mt-3">Temukan berita atau laporan terkini lainnya!</div>
         <div className="flex flex-row justify-center gap-3">
           {/* Card */}
           <div className="justify-around mt-5">
             <div className="w-120 justify-center flex flex-row">
-              {beritaLanding.map((item) => {
+              {dataLaporan.map((item) => {
                 return(
                   <div className="mt-5 w-80 mx-5 justify-center text-center px-4" key={item.id}>
-                    <div className='w-[300px] h-[350px] bg-blue-600 p-3 rounded-lg'>
-                  <img className='rounded-lg items-center justify-center' src="" alt={item.judul} />
-                    </div>
-                <div className='mt-5 mb-3 text-blue-600 font-bold text-lg cursor-pointer'>{item.judul}</div>
-                  <p>{item.subjudul}</p>
+                  <img className='w-[300px] h-[350px] rounded-lg items-center justify-center' src={item.img} alt={item.jalan} />
+                <div className='mt-5 mb-3 text-blue-600 font-bold text-lg cursor-pointer'>{item.jalan}</div>
+                  <p>{item.deskripsi}</p>
                 </div>
               );
               })}

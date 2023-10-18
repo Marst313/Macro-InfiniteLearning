@@ -92,6 +92,7 @@ export const dataPengguna = [
 export const dataLaporan = [
   {
     id: 1,
+    img: 'https://images.unsplash.com/photo-1617252820692-ff67f50fca2d?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=1887',
     jalan: 'Jalan Singodimejo',
     tipeRusak: 'Parah',
     tanggal: '25-12-2023',
@@ -100,6 +101,7 @@ export const dataLaporan = [
   },
   {
     id: 2,
+    img: 'https://images.unsplash.com/photo-1617252820855-a829ba1babe7?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=1887',
     jalan: 'Jalan Aja Males',
     tipeRusak: 'Biasa',
     tanggal: '25-06-2023',
@@ -108,6 +110,7 @@ export const dataLaporan = [
   },
   {
     id: 3,
+    img: 'https://images.unsplash.com/photo-1617252820859-00a22c77ec0c?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=1887',
     jalan: 'Jalan In Dulu Aja Gasih',
     tipeRusak: 'Sedang',
     tanggal: '21-02-2023',
@@ -139,8 +142,14 @@ export const landingHelpers = [
     id: 3,
     title: 'Tindak Lanjut Laporan',
     svg: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="75" height="100" viewBox="0 0 24 24" fill="#0057FF">
-        <path d="M12 2h-1v9H2v1a10 10 0 0 0 17.07 7.07A10 10 0 0 0 12 2z"></path>
+      <svg xmlns="http://www.w3.org/2000/svg" width="60" height="100" viewBox="0 0 76 100" fill="#0057FF">
+            <path d="M46.1,0H13C9.7,0,6.5,1.3,4.2,3.7C1.8,6,0.5,9.2,0.5,12.5v75c0,3.3,1.3,6.5,3.7,8.8c2.3,2.3,5.5,3.7,8.8,3.7h50
+      c3.3,0,6.5-1.3,8.8-3.7s3.7-5.5,3.7-8.8V29.4c0-1.7-0.7-3.2-1.8-4.4L50.5,1.8C49.3,0.7,47.7,0,46.1,0z M47.4,21.9V9.4l18.8,18.8
+      H53.6c-1.7,0-3.2-0.7-4.4-1.8S47.4,23.5,47.4,21.9z M51.6,59.4l1.7,1.1l1.7,1.1c2.2-3.3,3.5-7.4,3.5-11.7s-1.3-8.3-3.5-11.7
+      l-1.7,1.1l-1.7,1.1c1.8,2.7,2.9,6,2.9,9.4S53.4,56.7,51.6,59.4z M48.1,34.2l-1.1,1.7c-2.7-1.8-6-2.9-9.4-2.9s-6.7,1.1-9.4,2.9
+      l-1.1-1.7l-1.1-1.7c3.3-2.2,7.4-3.5,11.7-3.5s8.3,1.3,11.7,3.5L48.1,34.2z M20.5,50c0-3.5,1.1-6.7,2.9-9.4l-1.7-1.1L20,38.3
+      c-2.2,3.3-3.5,7.4-3.5,11.7s1.3,8.3,3.5,11.7l1.7-1.1l1.7-1.1C21.6,56.7,20.5,53.5,20.5,50z M26.9,65.8l1.1-1.7
+      c2.7,1.8,6,2.9,9.4,2.9s6.7-1.1,9.4-2.9l1.1,1.7l1.1,1.7c-3.3,2.2-7.4,3.5-11.7,3.5s-8.3-1.3-11.7-3.5L26.9,65.8z"/>
       </svg>
     ),
   },
@@ -155,44 +164,22 @@ export const landingHelpers = [
   },
 ];
 
-export const beritaLanding = [
-  {
-    id: '1',
-    judul: 'Berita 1',
-    subjudul: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.',
-  },
-  {
-    id: '2',
-    judul: 'Berita 2',
-    subjudul: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.',
-  },
-  {
-    id: '3',
-    judul: 'Berita 3',
-    subjudul: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.',
-  },
-  {
-    id: '4',
-    judul: 'Berita 4',
-    subjudul: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur expedita dignissimos, ab ad aliquid corporis asperiores dicta aut enim. Quidem.',
-  },
-];
 
 export const layananLanding = [
   {
     id: '1',
     judul: 'Laporkan Masalah Infrastruktur',
-    subjudul: 'Kami menyediakan platform yang mudah digunakan di mana Anda dapat melaporkan berbagai masalah infrastruktur, mulai dari lubang dan trotoar yang rusak hingga lampu lalu lintas yang tidak berfungsi.',
+    text: 'Kami menyediakan platform yang mudah digunakan di mana Anda dapat melaporkan berbagai masalah infrastruktur, mulai dari lubang dan trotoar yang rusak hingga lampu lalu lintas yang tidak berfungsi.',
   },
   {
     id: '2',
     judul: 'Pemantauan Waktu Nyata',
-    subjudul: 'Kami menggunakan teknologi tercanggih untuk memantau permasalahan yang dilaporkan secara real-time. Memastikan bahwa masalah ditangani secepat mungkin.',
+    text: 'Kami menggunakan teknologi tercanggih untuk memantau permasalahan yang dilaporkan secara real-time. Memastikan bahwa masalah ditangani secepat mungkin.',
   },
   {
     id: '3',
     judul: 'Transparansi dan Akuntabilitas',
-    subjudul: 'Kami berkomitmen terhadap transparansi dalam operasi kami. Anda dapat melacak perkembangan masalah yang dilaporkan dan melihat status perbaikan yang sedang berlangsung.',
+    text: 'Kami berkomitmen terhadap transparansi dalam operasi kami. Anda dapat melacak perkembangan masalah yang dilaporkan dan melihat status perbaikan yang sedang berlangsung.',
   },
 ];
 
