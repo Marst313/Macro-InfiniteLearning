@@ -38,7 +38,7 @@ const DetailLaporan = () => {
             </div>
           </div>
 
-          <div className="flex flex-col  justify-center">
+          <div className="flex flex-col mr-20 justify-center">
             <div>
               <img src="https://images.unsplash.com/photo-1480859634854-2acf7a955d43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cm9hZHxlbnwwfDF8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Selected" className="max-h-80 max-w-xs" />
             </div>

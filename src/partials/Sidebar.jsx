@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
+import logobw from '../img/logobw.svg';
 import SidebarLinkGroup from './SidebarLinkGroup';
 import { adminSidebar, userSidebar } from '../utils/links/link';
 import { useUserContext } from '../utils/userContext';
@@ -55,7 +56,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
       {/* Sidebar */}
 
       <NavLink end to="/" className={`gap-2 py-9 px-5 items-center hidden lg:flex`}>
-        <img src="" alt="Logo" />
+        <img src={logobw} alt="Logo" />
         <h1 className="text-blackSecondary font-semibold text-2xl">Caretakers</h1>
       </NavLink>
       <div
