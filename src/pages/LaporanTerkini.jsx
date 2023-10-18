@@ -31,7 +31,7 @@ const LaporanTerkini = () => {
         {dataLaporan.map((item) => {
           return (
             <li onClick={() => navigate('detaillaporan')} key={item.id} className="justify-center bottom-2 border-solid border-2  border-sky-500 w-auto rounded-xl p-2 cursor-pointer hover:border-sky-700 group">
-              <img className="w-full h-80 mb-3 rounded-lg group-hover:bg-whiteSecondary " src="https://picsum.photos/360/240" alt={item.jalan} />
+              <img className="w-full h-80 mb-3 rounded-lg group-hover:bg-whiteSecondary " src={item.img} alt={item.jalan} />
               <h1 className="text-[20px] bold align-middle font-bold flex items-center ">{item.jalan}</h1>
               <div className="  flex flex-col items-center  ">
                 <div className="flex flex-row w-full h-7">
